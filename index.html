@@ -1,0 +1,68 @@
+---
+layout: page
+description: "Economics"
+description2: "Epidemiology"
+description3: "Data Science	"
+---
+<center>
+
+
+<p>I'm a data scientist who does other things too.</p>
+
+<h2><center>Public health surveillance</center></h2>
+
+<p>I co-founded <a href = 'https://hyfeapp.com'>Hyfe</a> with the intention of scaling up infectious disease surveillance so that public health authorities can monitor cough frequency variation in space-time.</p>
+
+
+<h2><center>Research</center></h2>
+
+<p>I do research on <a href = 'http://economicsofmalaria.com'>malaria in Mozambique</a> and <a href = 'http://droneots.com'>tuberculosis in Nepal</a>.</p>
+
+
+<h2><center>Consulting</center></h2>
+
+<p>I do some consulting. My company: <a href = 'http://databrew.cc'>databrew.cc</a>.</p>
+
+
+<h2><center>Politics</center></h2>
+
+<p>I write about politics. Sometimes in <a href = 'https://www.vilaweb.cat/autors/joe-brew/'>Catalan</a>, sometimes in <a href="https://www.spainenglish.com/2019/02/14/opinion-violations-presumption-innocence/">English</a>.</p>
+
+
+<h2><center>Photography</center></h2>
+
+<p>I like to take <a href = 'http://joebrew.net/photography'>photos</a>.</p>
+
+</center>
+
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+    </a>
+    <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
+</div>
+<hr>
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}

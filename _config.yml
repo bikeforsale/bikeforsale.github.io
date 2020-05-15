@@ -1,0 +1,15 @@
+# Site settings
+title: Joe Brew
+header-img: img/6x.JPG
+email: joebrew@gmail.com
+description: ""
+url: "http://joebrew.net"
+twitter_username: joethebrew
+github_username:  joebrew
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
